@@ -21,24 +21,29 @@ public class Main {
 		Course course1 = new Course(1, "Java", 100);
 		Course course2 = new Course(2, "C#", 200);
 		Course course3 = new Course(3, "Phyton", 300);
-		Logger[] loggers = {new DatabaseLogger(), new FileLogger(),new MailLogger()};
+		Course course4 = new Course(4, "C", 500);
+
+		Logger[] loggers = { new DatabaseLogger(), new FileLogger(), new MailLogger() };
 
 		List<Course> courses = new ArrayList<>();
-		courses.add(course1);
-		courses.add(course2);
-		courses.add(course3);
-		CourseManager coursemanager = new CourseManager(courses, new JdbcDataDao(),loggers);
-		coursemanager.add(course3);
 
+		CourseManager coursemanager = new CourseManager(courses, new JdbcDataDao(), loggers);
+		coursemanager.add(course1);
+		coursemanager.add(course2);
+		coursemanager.add(course3);
+		coursemanager.add(course4);
+
+		System.out.println("--------------------------------");
 		Category category1 = new Category("Yazılım");
 		Category category2 = new Category("Donanım");
-		List<Category> categories = new ArrayList<>();
-		categories.add(category1);
-		categories.add(category2);
+		Category category3 = new Category("VeriTabanı");
 
-		CategoryManager categoryManager = new CategoryManager(categories, new HibernateDataDao(),loggers);
+		List<Category> categories = new ArrayList<>();
+
+		CategoryManager categoryManager = new CategoryManager(categories, new HibernateDataDao(), loggers);
 		categoryManager.add(category1);
 		categoryManager.add(category2);
+		categoryManager.add(category3);
 
 	}
 

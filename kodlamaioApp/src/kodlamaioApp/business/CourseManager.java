@@ -22,9 +22,10 @@ public class CourseManager {
 			throw new Exception("Kursun fiyatı 0 dan küçük olamaz");
 		}
 		for (Course courses : courses) {
-			if (courses.getCourseName() == course.getCourseName()) {
+			if (courses.getCourseName().equals(course.getCourseName()) ) {
 				throw new Exception("Kurs isimleri aynı olamaz");
 			}
+			
 
 		}
 		dataDao.add(course);

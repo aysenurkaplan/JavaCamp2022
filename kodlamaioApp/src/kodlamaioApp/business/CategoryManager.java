@@ -22,7 +22,7 @@ public class CategoryManager {
 			if (categories.getCategoryName().equals(category.getCategoryName())) {
 				throw new Exception("Kategori ismi aynı olamaz");
 			}
-
+          
 		}
 		dataDao.add(category);
 		

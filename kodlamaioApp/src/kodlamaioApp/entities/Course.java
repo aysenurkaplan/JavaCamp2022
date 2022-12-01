@@ -11,9 +11,10 @@ public class Course {
 
 	public Course(int id, String courseName, double coursePrice) {
 		
+		this.coursePrice = coursePrice;
 		this.id = id;
 		this.courseName = courseName;
-		this.coursePrice = coursePrice;
+		
 	}
 
 	public int getId() {
